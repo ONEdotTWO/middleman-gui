@@ -44,7 +44,7 @@
               <h3 class="masthead-brand">MiddleMan</h3>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li><a href="#">Home</a></li>
+                  <li><a href="index.html">Home</a></li>
                   <li class="active"><a href="messages.html">Messages</a></li>
                 </ul>
               </nav>
@@ -55,20 +55,9 @@
             <h1 class=heading">Messages</h1>
           </div>          
           
-          <div class="messages content">
-
-						{% for message in messages %}
-						{% if message.from == "system" || message.from == "MiddleMan" %}
-						<div class="message-right message" id="1">
-						{% else %}
-						<div class="message-left message" id="1">
-						{% endif %}
-                <div class="message-from">{{ message.from }}</div>
-                <div class="message-to">{{ message.to }}</div>
-                <div class="message-content">{{ message.message }}</div>
-            </div>
-            <div class="clearer"></div>
-            {% endfor %}
+          <div id="messages">
+        
+            
           </div>
          
           <div class="mastfoot">

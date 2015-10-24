@@ -46,16 +46,26 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', function(req, res){
 	res.render('index', {});
 });
+app.get('/index.html', function(req, res){
+	res.render('index', {});
+});
 
+/*
 var messages;
 
 messageParser.getMessages(function(messagesIn){
 	console.log("App got " + messagesIn.length + " messages");
 	messages = messagesIn;
 });
-
+*/
 app.get('/messages.html', function(req, res){
-	res.render('messages', {messages:messages});
+	res.render('messages', {});
+});
+
+app.get('/getMessages.html', function(req, res){
+	messageParser.getMessages(function(messagesIn){
+		res.send(messagesIn);
+	});
 });
 
 // catch 404 and forward to error handler
