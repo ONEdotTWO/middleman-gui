@@ -22,5 +22,6 @@ setInterval(function(){
     		}
     		
     		$("#messages").html(output);
+    		$("html, body").animate({ scrollTop: $(document).height() }, "slow");
     	});
 }, 2000);
