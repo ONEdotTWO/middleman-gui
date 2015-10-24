@@ -1,4 +1,23 @@
+
+/*
 var express = require('express');
+var cons = require('consolidate');
+
+var app = express();
+app.engine('html', cons.swig);
+app.set('view engine', 'html');
+app.set('views', __dirname + '/views');
+
+app.get('/', function(req, res){
+	res.render('index', {});
+});
+
+app.get('*', function(req, res){
+	res.send(404, 'Sorry the page does not exist');
+});*/
+
+var express = require('express');
+var cons = require('consolidate');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -10,9 +29,9 @@ var users = require('./routes/users');
 
 var app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.engine('html', cons.swig);
+app.set('view engine', 'html');
+app.set('views', __dirname + '/views');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -22,8 +41,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
+app.get('/', function(req, res){
+	res.render('index', {});
+});
+
+app.get('/messages.html', function(req, res){
+	res.render('messages', {});
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
