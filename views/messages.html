@@ -56,24 +56,21 @@
           </div>          
           
           <div class="messages content">
-            <div class="message-left message" id="1">
-                <div class="message-from">01234567890</div>
-                <div class="message-to">01234567891</div>
-                <div class="message-content">hello world</div>
+
+						{% for message in messages %}
+						{% if message.from == "system" || message.from == "MiddleMan" %}
+						<div class="message-right message" id="1">
+						{% else %}
+						<div class="message-left message" id="1">
+						{% endif %}
+                <div class="message-from">{{ message.from }}</div>
+                <div class="message-to">{{ message.to }}</div>
+                <div class="message-content">{{ message.message }}</div>
             </div>
             <div class="clearer"></div>
-            <div class="message-right message" id="2">
-                <div class="message-from">01234567891</div>
-                <div class="message-to">01234567890</div>
-                <div class="message-content">hello world, how are you?</div>
-             </div>
-             <div class="clearer"></div>
+            {% endfor %}
           </div>
-          
-          
-          
-          
-
+         
           <div class="mastfoot">
             <div class="inner">
               <p>Developed by ONEdotTWO. Code available <a href="https://github.com/0xtim/ONEdotTWO" target="_blank">here</a></p>
@@ -91,6 +88,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/messages.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <!--<script src="js/ie10-viewport-bug-workaround.js"></script>-->
   </body>
