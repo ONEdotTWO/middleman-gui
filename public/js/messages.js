@@ -60,7 +60,8 @@ function addMessagesToPage(messageJson)
 		{
 			if (messagesToHide.indexOf(messageJson[i]['from']) == -1)
 			{
-				if (messageJson[i]['from'] == "system" || messageJson[i]['from'] == "MiddleMan" || messageJson[i]['from'] == '447860033664')
+				if (messageJson[i]['from'] == "system" || messageJson[i]['from'] == "MiddleMan" || messageJson[i]['from'] == '447860033664'
+				    || messageJson[i]['from'] == '447817933037')
 				{
 					output += '<div class="message-right message" id="1">';
 				}
