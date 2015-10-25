@@ -104,7 +104,7 @@ function filterMessages()
 			}
 			else
 			{
-				var index = array.indexOf(numbs[i].value);
+				var index = messagesToHide.indexOf(numbs[i].value);
 				if (index > -1) 
 				{
 					messagesToHide.splice(index, 1);
