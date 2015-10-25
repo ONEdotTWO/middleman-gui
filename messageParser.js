@@ -32,7 +32,14 @@ exports.getRando = function(callback)
 		
 		res.on('end', function(){
 			messages = JSON.parse(body);
-			callback(messages[0]['messages']);
+			if (messages === undefined)
+			{
+				callback({});
+			}
+			else
+			{
+				callback(messages[0]['messages']);
+			}
 		});
 	}).on('error', function(e){
       console.log("Got an error: ", e);
@@ -51,7 +58,14 @@ exports.getRandoMembers = function(callback)
 		
 		res.on('end', function(){
 			messages = JSON.parse(body);
-			callback(messages[0]['members']);
+			if (messages === undefined)
+			{
+				callback({});
+			}
+			else
+			{
+				callback(messages[0]['members']);
+			}
 		});
 	}).on('error', function(e){
       console.log("Got an error: ", e);
