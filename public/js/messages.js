@@ -2,6 +2,7 @@
 // Check for updates every 2 seconds
 var otherNumbers = [];
 var messagesToHide = [];
+
 /*
 setInterval(function(){
     updateMessages();
