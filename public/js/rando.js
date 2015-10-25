@@ -1,9 +1,9 @@
 
 // Check for updates every 2 seconds
-/*setInterval(function(){
+setInterval(function(){
     updateRandoTable();
 }, 2000);
-*/
+
 function updateRandoTable()
 {
 	// Get data
