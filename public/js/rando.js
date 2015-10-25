@@ -30,9 +30,9 @@ function updateRandoTable()
 function addRandoTableToPage(messageJson, membersJson)
 {
 	var output = "";
-	if (messageJson.length == 0)
+	if (messageJson.length == 0 || messageJson.length === undefined)
 	{
-		output = "<center><p><a href='http://ec2-52-17-7-182.eu-west-1.compute.amazonaws.com/rando/start' target='_blank'></a></p></center>";
+		output = "<center><p><a href='http://ec2-52-17-7-182.eu-west-1.compute.amazonaws.com/rando/start' target='_blank'>Start</a></p></center>";
 	}
 	else
 	{
@@ -105,7 +105,7 @@ function sendFormMessage()
 	
 	$.ajax({
 
-    url: 'http://ec2-52-17-7-182.eu-west-1.compute.amazonaws.com/send-edit',
+    url: 'http://ec2-52-17-7-182.eu-west-1.compute.amazonaws.com/rando/send-edit',
     data: data,
     type: 'POST',
     crossDomain: true,
