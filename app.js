@@ -78,6 +78,12 @@ app.get('/getRando.html', function(req, res){
 	});
 });
 
+app.get('/getRandoMembers.html', function(req, res){
+	messageParser.getRandoMembers(function(members) {
+		res.send(members);
+	});
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
