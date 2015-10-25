@@ -2,7 +2,7 @@
 // Check for updates every 2 seconds
 setInterval(function(){
     updateRandoTable();
-}, 2000);
+}, 10000);
 
 function updateRandoTable()
 {
@@ -104,7 +104,8 @@ function sendFormMessage()
 	var data = { "from": fromNumber, "to": toNumber, "content": content};
 	
 	$.post('http://ec2-52-17-7-182.eu-west-1.compute.amazonaws.com/rando/send-edit', data);
-	
-	updateRandoTable();
+
+	// Hide form
+	document.forms["randoMessageForm"].hide();
 }
  
