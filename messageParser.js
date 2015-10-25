@@ -13,7 +13,6 @@ exports.getMessages = function(callback)
 		
 		res.on('end', function(){
 			messages = JSON.parse(body);
-			console.log("Returning " + messages.length + " messages");
 			callback(messages);
 		});
 	}).on('error', function(e){

@@ -19,3 +19,52 @@
 .clearer {
     clear: both;
 }
+
+.mastfoot .inner {
+	padding-bottom: 5px;
+}
+
+.masthead .inner {
+	padding-top: 5px;
+}
+
+.masthead {
+	/*width:100%;
+    position:fixed;
+    z-index:10;
+    background:inherit;*/
+    z-index:3;
+    background-color: #333;
+}
+
+.mastfoot {
+	background-color: #333;
+	z-index: 3;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+#messages-heading {
+}
+
+#scrolling-messages {
+	/*width:100%;
+    padding-top:92px;
+    z-index:5;
+    overflow:auto;*/
+    z-index: 2;
+    position:relative;
+    padding-top: 60px;
+    padding-bottom: 70px;
+}
+
+#messages {
+	margin-bottom: 70px;
+	width: 400px;
+}
