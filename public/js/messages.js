@@ -12,6 +12,15 @@ function updateMessages()
 {
 	// Get data
 	$.getJSON('getMessages.html', function(data) {        
+		
+		// Work out if we are at the bottom of the page
+		var atBottom = false;
+		if ($(window).scrollTop() + $(window).height() == $(document).height())
+		{
+			atBottom = true;
+			console.log("We are at the bottom");
+		}
+		
 		addMessagesToPage(data);
 		
 		var optionsOutput = "";
@@ -29,7 +38,7 @@ function updateMessages()
 		
 		$("#message-controls").html(optionsOutput);
 		
-		if ($(document).scrollTop() == $(document).height())
+		if (atBottom)
 		{
 			$("html, body").animate({ scrollTop: $(document).height() }, "slow");
 		}
