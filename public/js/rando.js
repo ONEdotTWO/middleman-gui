@@ -62,7 +62,7 @@ function addRandoTableToPage(messageJson, membersJson)
 			}
 			
 			// We are on the last message
-			if (i == messageJson.length -1/* && messageJson[i]['pending'] == true*/)
+			if (i == messageJson.length -1 && messageJson[i]['pending'] == true)
 			{
 				// Finish off table
 				output += "</table></center>";
