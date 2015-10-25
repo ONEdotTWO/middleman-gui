@@ -103,17 +103,7 @@ function sendFormMessage()
 	
 	var data = { "from": fromNumber, "to": toNumber, "content": content};
 	
-	$.ajax({
-
-    url: 'http://ec2-52-17-7-182.eu-west-1.compute.amazonaws.com/rando/send-edit',
-    data: data,
-    type: 'POST',
-    crossDomain: true,
-    dataType: 'jsonp',
-    success: function() { console.log("Success"); },
-    error: function() { console.log('Failed!'); },
-    beforeSend: setHeader
-});
+	$.post('http://ec2-52-17-7-182.eu-west-1.compute.amazonaws.com/rando/send-edit', data);
 	
 	updateRandoTable();
 }
