@@ -32,7 +32,7 @@ exports.getRando = function(callback)
 		
 		res.on('end', function(){
 			messages = JSON.parse(body);
-			if (messages === undefined)
+			if (messages[0] === undefined)
 			{
 				callback({});
 			}
@@ -58,7 +58,7 @@ exports.getRandoMembers = function(callback)
 		
 		res.on('end', function(){
 			messages = JSON.parse(body);
-			if (messages === undefined)
+			if (messages[0] === undefined)
 			{
 				callback({});
 			}
