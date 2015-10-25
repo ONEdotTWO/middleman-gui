@@ -22,7 +22,6 @@ exports.getMessages = function(callback)
 
 exports.getRando = function(callback)
 {
-	console.log("Getting messages");
 	var url = "https://api.mongolab.com/api/1/databases/middleman/collections/randos?apiKey=8vQvECjRR7qHZ_s640MP0sy9W_-Vk4wn";
 	var messages;
 	http.get(url, function(res){
@@ -33,7 +32,7 @@ exports.getRando = function(callback)
 		
 		res.on('end', function(){
 			messages = JSON.parse(body);
-			callback(messages);
+			callback(messages[0]['messages']);
 		});
 	}).on('error', function(e){
       console.log("Got an error: ", e);
