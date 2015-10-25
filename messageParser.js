@@ -68,6 +68,6 @@ exports.getRandoMembers = function(callback)
 			}
 		});
 	}).on('error', function(e){
-      console.log("Got an error: ", e);
+		console.log("Got an error: ", e);
 	});
 };

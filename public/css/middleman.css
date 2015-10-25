@@ -76,3 +76,7 @@
 #rando-messages th, td {
 	padding: 5px;
 }
+
+#rando-messages input {
+	color: #333;
+}
