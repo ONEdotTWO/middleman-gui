@@ -62,8 +62,18 @@ app.get('/messages.html', function(req, res){
 	res.render('messages', {});
 });
 
+app.get('/rando.html', function(req, res){
+	res.render('rando', {});
+});
+
 app.get('/getMessages.html', function(req, res){
 	messageParser.getMessages(function(messagesIn){
+		res.send(messagesIn);
+	});
+});
+
+app.get('/getRando.html', function(req, res){
+	messageParser.getRando(function(messagesIn) {
 		res.send(messagesIn);
 	});
 });
