@@ -3,11 +3,11 @@
 var otherNumbers = [];
 var messagesToHide = [];
 
-/*
+
 setInterval(function(){
     updateMessages();
 }, 2000);
-*/
+
 function updateMessages()
 {
 	// Get data
@@ -17,7 +17,14 @@ function updateMessages()
 		var optionsOutput = "";
 		for (var i = 0; i < otherNumbers.length; i++)
 		{
-			optionsOutput += '<label><input type="checkbox" name="' + otherNumbers[i] + '" value="' + otherNumbers[i] + '" checked/> ' + otherNumbers[i] + '</label><br>';
+			if (messagesToHide.indexOf(otherNumbers[i]) == -1)
+			{
+				optionsOutput += '<label><input type="checkbox" name="' + otherNumbers[i] + '" value="' + otherNumbers[i] + '" checked/> ' + otherNumbers[i] + '</label><br>';
+			}
+			else
+			{
+				optionsOutput += '<label><input type="checkbox" name="' + otherNumbers[i] + '" value="' + otherNumbers[i] + '"/> ' + otherNumbers[i] + '</label><br>';
+			}
 		}
 		
 		$("#message-controls").html(optionsOutput);
